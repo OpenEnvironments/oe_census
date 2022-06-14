@@ -6,14 +6,17 @@ from contextlib import redirect_stdout
 
 def oe_derive_columns(df, rules):
     """
-    This function calculates new columns in a dataframe dfd on a set of rules.
+    This function calculates new columns in a dataframe based on a set of rules.
+    The rules list must be:
+     * Executable python using just pandas or numpy functions
+     * to be executed on a generic dataframe named "df"
+     * with any commented text beginning with the # character
+     An example of this text can be found in this repository as myrules.txt
 
     :param df: the original dataframe providing the columns upon which derivation rules are applied.
     :type df: dataframe
 
     :param rules: the derivation rules as a list of text
-        to be executed on a generic dataframe named "df"
-        using pandas or numpy functions
     :type rules: list
 
     :returns df: the original dataframe with new derived columns.
