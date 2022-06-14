@@ -1,0 +1,16 @@
+df['RepublicanRate'] = df['REP'] / (df['REP'] + df['DEM'] + df['LIB'] + df['OTH'])
+df['DemocratRate'] = df['DEM'] / (df['REP'] + df['DEM'] + df['LIB'] + df['OTH'])
+df['Over65Rate'] = (df['B01001e20'] + df['B01001e21'] + df['B01001e22'] + df['B01001e23'] + df['B01001e24'] + df['B01001e25'] + df['B01001e44'] + df['B01001e45'] + df['B01001e46'] + df['B01001e47'] + df['B01001e48'] + df['B01001e49']) / (df['B01001e2'] + df['B01001e26'])
+df['MinorityRate'] = 1 - (df['B02001e2'] / df['B02001e1'])
+df['PopDensity'] = df['B01001e1'] / df['ALAND']
+df['PopGrowth'] = (df['B01001e1'] - df['B01001e1_2010']) / df['B01001e1_2010']
+df['CollegePlusRate'] = (df['B15003e21'] + df['B15003e22'] + df['B15003e23'] + df['B15003e24'] + df['B15003e25']) / df['B15003e1']
+df['EmploymentRate'] = df['B23025e2'] / df['B23025e1']
+df['FamilyRate'] = df['B11001e2'] / df['B11001e1']
+df['ChildrenRate'] = df['B09018e1'] / df['B09019e1']
+df['Under25KRate'] = (df['B19001e2'] + df['B19001e3'] + df['B19001e4'] + df['B19001e5']) / df['B19001e1']
+df['logPop'] = np.log(df.B01001e1)
+df['logPopDensity'] = np.log(df.PopDensity)
+df['logOver65Rate'] = np.log(df[df.Over65Rate > 0].Over65Rate)
+df['logLand'] = np.log(df.ALAND)
+df['logRaceBasis'] = np.log(df.B02001e1)

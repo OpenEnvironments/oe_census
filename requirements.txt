@@ -1,0 +1,13 @@
+bs4
+contextlib
+io
+setuptools
+datetime
+geopandas
+json
+numpy
+os
+pandas
+re
+requests
+sys
