@@ -7,7 +7,7 @@ with open('LICENSE.md') as license_file:
     LICENSE = license_file.read()
 
 setup(
-    name='acstools',
+    name='oe_census',
     version='0.1.0',
     description='Tools for appending Census data to a given address',
     long_description=README,
